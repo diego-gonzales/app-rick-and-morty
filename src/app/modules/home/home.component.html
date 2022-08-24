@@ -2,26 +2,9 @@
   class="flex justify-content-center align-items-center animate__animated animate__bounceInDown"
 >
   <div class="grid justify-content-center align-items-center w-full h-screen">
-    <div class="col-12 md:col-6 lg:col-3 p-2 hoverCard" routerLink="/welcome">
-      <p-card header="Characters" class="w-full">
-        <ng-template pTemplate="header">
-          <img alt="Card" src="https://www.primefaces.org/primeng/assets/showcase/images/usercard.png" />
-        </ng-template>
-      </p-card>
-    </div>
-    <div class="col-12 md:col-6 lg:col-3 p-2 hoverCard">
-      <p-card header="Locations" class="w-full">
-        <ng-template pTemplate="header">
-          <img alt="Card" src="https://www.primefaces.org/primeng/assets/showcase/images/usercard.png" />
-        </ng-template>
-      </p-card>
-    </div>
-    <div class="col-12 md:col-6 lg:col-3 p-2 hoverCard">
-      <p-card header="Episodes" class="w-full">
-        <ng-template pTemplate="header">
-          <img alt="Card" src="https://www.primefaces.org/primeng/assets/showcase/images/usercard.png" />
-        </ng-template>
-      </p-card>
-    </div>
+    <app-resource-card
+      *ngFor="let resource of resources"
+      [resource]="resource"
+    ></app-resource-card>
   </div>
 </main>
