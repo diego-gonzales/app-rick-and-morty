@@ -4,7 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./modules/get-started/get-started.module').then(m => m.GetStartedModule)
+    title: 'Welcome',
+    loadComponent: () => import('./standaloneComponents/welcome/welcome.component').then(m => m.WelcomeComponent)
+  },
+  {
+    path: 'home',
+    title: 'Home',
+    loadComponent: () => import('./standaloneComponents/home/home.component').then(m => m.HomeComponent)
   },
   {
     path: 'rick-and-morty',
