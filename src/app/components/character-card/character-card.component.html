@@ -1,13 +1,15 @@
 <div class="hoverCard" *ngIf="character">
   <p-card
     [header]="character.name | titlecase"
-    styleClass="m-1"
+    styleClass="m-1 border-round-lg"
   >
     <ng-template pTemplate="header">
       <img
         [alt]="character.name"
-        src="https://www.primefaces.org/primeng/assets/showcase/images/usercard.png"
+        [src]="character.image"
+        class="border-round-top-lg"
       />
     </ng-template>
+    <p-button label="Show more" icon="pi pi-eye" iconPos="right"></p-button>
   </p-card>
 </div>

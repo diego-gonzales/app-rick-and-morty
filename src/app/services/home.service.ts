@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { ResourcesResponse } from '@shared/interfaces/resources-response.interface';
 import { Resource } from '@shared/interfaces/resource.interface';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Injectable({
   providedIn: 'root'

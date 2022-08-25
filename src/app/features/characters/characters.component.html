@@ -1,3 +1,10 @@
+<div *ngIf="info">
+  <app-paginator
+    [rows]="20"
+    [totalRecords]="info.count"
+    (goToPage)="goToPage($event)"
+  ></app-paginator>
+</div>
 <div class="grid justify-content-center w-full my-2 mx-0 px-2">
   <app-character-card
     *ngFor="let character of characters"

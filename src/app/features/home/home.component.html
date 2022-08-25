@@ -1,10 +1,11 @@
 <main
   class="flex justify-content-center align-items-center animate__animated animate__bounceInDown"
 >
-  <div class="grid justify-content-center align-items-center w-full h-screen">
+  <div class="grid justify-content-center align-items-center w-full h-screen px-2">
     <app-resource-card
       *ngFor="let resource of resources"
       [resource]="resource"
+      class="col-12 md:col-6 lg:col-4 xl:col-3"
     ></app-resource-card>
   </div>
 </main>

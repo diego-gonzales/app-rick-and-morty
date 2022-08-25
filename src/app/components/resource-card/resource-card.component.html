@@ -1,7 +1,7 @@
-<div class="m-2 hoverCard" *ngIf="resource">
+<div class="hoverCard" *ngIf="resource">
   <p-card
     [header]="resource.name | titlecase"
-    styleClass="m-2"
+    styleClass="m-1"
     [routerLink]="['/rick-and-morty', resource.name]"
   >
     <ng-template pTemplate="header">
