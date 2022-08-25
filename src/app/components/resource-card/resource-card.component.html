@@ -1,0 +1,14 @@
+<div class="m-2 hoverCard" *ngIf="resource">
+  <p-card
+    [header]="resource.name | titlecase"
+    styleClass="m-2"
+    [routerLink]="['/rick-and-morty', resource.name]"
+  >
+    <ng-template pTemplate="header">
+      <img
+        [alt]="resource.name"
+        src="https://www.primefaces.org/primeng/assets/showcase/images/usercard.png"
+      />
+    </ng-template>
+  </p-card>
+</div>

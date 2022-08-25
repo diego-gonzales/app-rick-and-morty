@@ -1,0 +1,12 @@
+.hoverCard {
+  &:hover {
+    text-shadow: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    transform: scale(1.01);
+    z-index: 1;
+  }
+}

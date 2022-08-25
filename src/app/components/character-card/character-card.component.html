@@ -1,11 +1,11 @@
-<div
-  class=" m-1 hoverCard"
-  *ngIf="resource"
->
-  <p-card [header]="resource.name | titlecase" styleClass="m-2">
+<div class="hoverCard" *ngIf="character">
+  <p-card
+    [header]="character.name | titlecase"
+    styleClass="m-1"
+  >
     <ng-template pTemplate="header">
       <img
-        [alt]="resource.name"
+        [alt]="character.name"
         src="https://www.primefaces.org/primeng/assets/showcase/images/usercard.png"
       />
     </ng-template>

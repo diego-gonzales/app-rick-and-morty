@@ -5,12 +5,12 @@ export const routes: Routes = [
   {
     path: '',
     title: 'Welcome',
-    loadComponent: () => import('@modules/welcome/welcome.component').then(m => m.WelcomeComponent)
+    loadComponent: () => import('@features/welcome/welcome.component').then(m => m.WelcomeComponent)
   },
   {
     path: 'home',
     title: 'Home',
-    loadComponent: () => import('@modules/home/home.component').then(m => m.HomeComponent)
+    loadComponent: () => import('@features/home/home.component').then(m => m.HomeComponent)
   },
   {
     path: 'rick-and-morty',
