@@ -7,20 +7,30 @@ import {
 } from '@shared/interfaces/characters-response.interface';
 import { CharacterCardComponent } from '@components/character-card/character-card.component';
 import { PaginatorComponent } from '@components/paginator/paginator.component';
+import { DialogService } from 'primeng/dynamicdialog';
+import { CharacterModalComponent } from '@components/character-modal/character-modal.component';
+import { PrimengModule } from '@modules/primeng/primeng.module';
 
 @Component({
   selector: 'app-characters',
   standalone: true,
-  imports: [CommonModule, CharacterCardComponent, PaginatorComponent],
+  imports: [
+    CommonModule,
+    CharacterCardComponent,
+    PaginatorComponent,
+    PrimengModule,
+  ],
   templateUrl: './characters.component.html',
   styleUrls: ['./characters.component.scss'],
+  providers: [DialogService],
 })
 export class CharactersComponent implements OnInit {
   characters: Character[] = [];
   info!: Info;
 
   constructor(
-    private _charactersService: CharactersService
+    private _charactersService: CharactersService,
+    private _dialogService: DialogService
   ) {}
 
   ngOnInit(): void {
@@ -31,6 +41,21 @@ export class CharactersComponent implements OnInit {
     this._charactersService.getCharacters(page).subscribe((resp) => {
       this.info = resp.info;
       this.characters = resp.results;
+    });
+  }
+
+  getCharacter(characterID: number) {
+    this._charactersService.getCharacter(characterID).subscribe((resp) => {
+      this.handleCharacterModal(resp);
+    });
+  }
+
+  handleCharacterModal(character: Character) {
+    this._dialogService.open(CharacterModalComponent, {
+      header: 'Choose a Car',
+      width: '70%',
+      dismissableMask: true,
+      data: { character }
     });
   }
 

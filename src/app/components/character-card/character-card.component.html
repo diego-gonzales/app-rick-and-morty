@@ -1,15 +1,18 @@
 <div class="hoverCard" *ngIf="character">
-  <p-card
-    [header]="character.name | titlecase"
-    styleClass="m-1 border-round-lg"
-  >
+  <p-card [header]="character.name | titlecase" styleClass="border-round-lg">
     <ng-template pTemplate="header">
       <img
         [alt]="character.name"
         [src]="character.image"
         class="border-round-top-lg"
+        loading="lazy"
       />
     </ng-template>
-    <p-button label="Show more" icon="pi pi-eye" iconPos="right"></p-button>
+    <p-button
+      label="Show more"
+      icon="pi pi-eye"
+      iconPos="right"
+      (onClick)="showMore()"
+    ></p-button>
   </p-card>
 </div>
