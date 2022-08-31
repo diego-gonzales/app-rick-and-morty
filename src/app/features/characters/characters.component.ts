@@ -52,8 +52,8 @@ export class CharactersComponent implements OnInit {
 
   handleCharacterModal(character: Character) {
     this._dialogService.open(CharacterModalComponent, {
-      header: 'Choose a Car',
-      width: '70%',
+      header: character.name,
+      styleClass: 'w-11 md:w-8 lg:w-7 xl:w-5',
       dismissableMask: true,
       data: { character }
     });

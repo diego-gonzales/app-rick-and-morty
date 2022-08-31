@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 import { PrimengModule } from '@modules/primeng/primeng.module';
+import { Character } from '@shared/interfaces/characters-response.interface';
 
 @Component({
   selector: 'app-character-modal',
@@ -11,13 +12,14 @@ import { PrimengModule } from '@modules/primeng/primeng.module';
   styleUrls: ['./character-modal.component.scss'],
 })
 export class CharacterModalComponent implements OnInit {
+  character!: Character;
 
   constructor(
-    public ref: DynamicDialogRef,
     public config: DynamicDialogConfig
   ) {}
 
   ngOnInit(): void {
     console.log(this.config);
+    this.character = this.config.data.character;
   }
 }
