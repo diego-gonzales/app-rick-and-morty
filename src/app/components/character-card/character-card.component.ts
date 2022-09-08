@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrimengModule } from '@modules/primeng/primeng.module';
-import { Character } from '@shared/interfaces/characters-response.interface';
+import { Character } from '@interfaces/characters-response.interface';
 
 @Component({
   selector: 'app-character-card',

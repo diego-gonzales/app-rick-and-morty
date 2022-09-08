@@ -6,7 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { routes } from './app/routes';
-import { RickAndMortyInterceptor } from '@core/interceptors/rick-and-morty.interceptor';
+import { RickAndMortyInterceptor } from '@interceptors/rick-and-morty.interceptor';
 
 if (environment.production) {
   enableProdMode();
@@ -18,6 +18,10 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(HttpClientModule),
     importProvidersFrom(BrowserModule),
     importProvidersFrom(BrowserAnimationsModule),
-    { provide: HTTP_INTERCEPTORS, useClass: RickAndMortyInterceptor, multi: true }
-  ]
-}).catch(error => console.log(error))
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RickAndMortyInterceptor,
+      multi: true,
+    },
+  ],
+}).catch((error) => console.log(error));

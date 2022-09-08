@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 import { PrimengModule } from '@modules/primeng/primeng.module';
-import { Character } from '@shared/interfaces/characters-response.interface';
+import { Character } from '@interfaces/characters-response.interface';
 
 @Component({
   selector: 'app-character-modal',

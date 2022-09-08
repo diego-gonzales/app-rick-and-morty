@@ -4,7 +4,7 @@ import { CharactersService } from '@services/characters.service';
 import {
   Character,
   Info,
-} from '@shared/interfaces/characters-response.interface';
+} from 'src/app/interfaces/characters-response.interface';
 import { CharacterCardComponent } from '@components/character-card/character-card.component';
 import { PaginatorComponent } from '@components/paginator/paginator.component';
 import { DialogService } from 'primeng/dynamicdialog';

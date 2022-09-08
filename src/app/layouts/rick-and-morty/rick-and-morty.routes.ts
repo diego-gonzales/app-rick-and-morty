@@ -9,17 +9,17 @@ export const RickAndMortyRoutes: Routes = [
       {
         path: 'characters',
         title: 'Characters',
-        loadComponent: () => import('@features/characters/characters.component').then(m => m.CharactersComponent)
+        loadComponent: () => import('@pages/characters/characters.component').then(m => m.CharactersComponent)
       },
       {
         path: 'locations',
         title: 'Locations',
-        loadComponent: () => import('@features/locations/locations.component').then(m => m.LocationsComponent)
+        loadComponent: () => import('@pages/locations/locations.component').then(m => m.LocationsComponent)
       },
       {
         path: 'episodes',
         title: 'Episodes',
-        loadComponent: () => import('@features/episodes/episodes.component').then(m => m.EpisodesComponent)
+        loadComponent: () => import('@pages/episodes/episodes.component').then(m => m.EpisodesComponent)
       },
       {
         path: '',

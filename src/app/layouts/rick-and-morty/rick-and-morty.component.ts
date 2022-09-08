@@ -8,13 +8,10 @@ import { MenubarComponent } from '@components/menubar/menubar.component';
   standalone: true,
   imports: [CommonModule, RouterModule, MenubarComponent],
   templateUrl: './rick-and-morty.component.html',
-  styleUrls: ['./rick-and-morty.component.scss']
+  styleUrls: ['./rick-and-morty.component.scss'],
 })
 export class RickAndMortyComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
