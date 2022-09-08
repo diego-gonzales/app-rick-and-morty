@@ -1,4 +1,4 @@
-<figure class="text-center">
+<figure class="text-center animate__animated animate__pulse">
   <img
     class="w-6rem h-6rem border-circle mx-auto"
     [src]="character.image"
@@ -7,8 +7,12 @@
   <div class="pt-2 text-center mt-1">
     <blockquote>
       <p class="text-lg">
-        Is {{ character.species }} species whose origin is
-        {{ character.origin.name }}. He is currently {{ character.status }}
+        {{ character.gender | gender }} is
+        <span class="font-italic">{{ character.species | lowercase }}</span>
+        species whose origin is
+        <span class="font-italic">{{ character.origin.name }}</span
+        >. {{ character.gender | gender: false }} is currently
+        <span class="font-italic">{{ character.status | lowercase }}.</span>
       </p>
     </blockquote>
     <figcaption class="font-medium">

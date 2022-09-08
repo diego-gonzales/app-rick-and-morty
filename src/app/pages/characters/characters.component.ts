@@ -53,7 +53,7 @@ export class CharactersComponent implements OnInit {
   handleCharacterModal(character: Character) {
     this._dialogService.open(CharacterModalComponent, {
       header: 'Character Detail',
-      styleClass: 'w-11 md:w-8 lg:w-7 xl:w-5',
+      styleClass: 'w-11 md:w-8 lg:w-7 xl:w-6',
       contentStyle: { 'max-height': '500px', overflow: 'hidden' },
       dismissableMask: true,
       data: { character },

@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 import { PrimengModule } from '@modules/primeng/primeng.module';
 import { Character } from '@interfaces/characters-response.interface';
+import { GenderPipe } from '@pipes/gender.pipe';
 
 @Component({
   selector: 'app-character-modal',
   standalone: true,
-  imports: [CommonModule, PrimengModule],
+  imports: [CommonModule, PrimengModule, GenderPipe],
   templateUrl: './character-modal.component.html',
   styleUrls: ['./character-modal.component.scss'],
 })
