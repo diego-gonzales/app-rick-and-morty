@@ -7,15 +7,15 @@
   <div class="pt-2 text-center mt-1">
     <blockquote>
       <p class="text-lg">
-        {{ character.gender | gender }} is
-        <span class="font-italic">{{ character.species | lowercase }}</span>
+        {{ character.gender | gender: false }} is {{ article }}
+        <span class="text-yellow-300">{{ character.species | species }}</span>
         species whose origin is
-        <span class="font-italic">{{ character.origin.name }}</span
+        <span class="text-yellow-300">{{ character.origin.name }}</span
         >. {{ character.gender | gender: false }} is currently
-        <span class="font-italic">{{ character.status | lowercase }}.</span>
+        <span class="text-yellow-300">{{ character.status | status }}</span>
       </p>
     </blockquote>
-    <figcaption class="font-medium">
+    <figcaption class="font-medium text-lg">
       <div class="text-cyan-500">
         {{ character.name }}
       </div>

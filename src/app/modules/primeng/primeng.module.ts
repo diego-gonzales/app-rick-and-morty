@@ -5,7 +5,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import { PaginatorModule } from 'primeng/paginator';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
-import { ChipModule } from 'primeng/chip';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   exports: [
@@ -15,7 +15,7 @@ import { ChipModule } from 'primeng/chip';
     InputTextModule,
     PaginatorModule,
     DynamicDialogModule,
-    ChipModule
-  ]
+    TableModule,
+  ],
 })
-export class PrimengModule { }
+export class PrimengModule {}
