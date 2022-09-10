@@ -6,6 +6,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PaginatorModule } from 'primeng/paginator';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { TableModule } from 'primeng/table';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 @NgModule({
   exports: [
@@ -16,6 +17,7 @@ import { TableModule } from 'primeng/table';
     PaginatorModule,
     DynamicDialogModule,
     TableModule,
+    MultiSelectModule,
   ],
 })
 export class PrimengModule {}

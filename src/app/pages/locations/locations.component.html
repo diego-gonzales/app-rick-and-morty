@@ -1,1 +1,56 @@
-<p>locations works!</p>
+<div class="m-3">
+  <p-table
+    [value]="locations"
+    [lazy]="true"
+    (onLazyLoad)="loadLocations($event)"
+    responsiveLayout="scroll"
+    dataKey="id"
+    [paginator]="true"
+    [rows]="20"
+    [totalRecords]="totalRecords"
+    [globalFilterFields]="['name', 'type', 'dimension']"
+    [showCurrentPageReport]="true"
+    tableStyleClass="text-center"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th class="text-center">Name</th>
+        <th class="text-center">Type</th>
+        <th class="text-center">Dimension</th>
+      </tr>
+      <tr>
+        <th>
+          <p-columnFilter
+            type="text"
+            field="name"
+            [showMenu]="false"
+            placeholder="Search by name"
+          ></p-columnFilter>
+        </th>
+        <th>
+          <p-columnFilter
+            type="text"
+            field="type"
+            [showMenu]="false"
+            placeholder="Search by type"
+          ></p-columnFilter>
+        </th>
+        <th>
+          <p-columnFilter
+            type="text"
+            field="dimension"
+            [showMenu]="false"
+            placeholder="Search by dimension"
+          ></p-columnFilter>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-location>
+      <tr>
+        <td>{{ location.name }}</td>
+        <td>{{ location.type }}</td>
+        <td>{{ location.dimension }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
