@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { ResourcesResponse } from '@interfaces/resources-response.interface';
-import { Resource } from '@interfaces/resource.interface';
+import { ResourcesResponse } from '@shared/interfaces/resources-response.interface';
+import { Resource } from '@shared/interfaces/resource.interface';
 
 @Injectable({
   providedIn: 'root'
