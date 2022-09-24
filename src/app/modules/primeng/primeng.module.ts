@@ -7,6 +7,8 @@ import { PaginatorModule } from 'primeng/paginator';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { TableModule } from 'primeng/table';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { VirtualScrollerModule } from 'primeng/virtualscroller';
+
 @NgModule({
   exports: [
     ButtonModule,
@@ -16,7 +18,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
     PaginatorModule,
     DynamicDialogModule,
     TableModule,
-    MultiSelectModule
+    MultiSelectModule,
+    VirtualScrollerModule,
   ],
 })
 export class PrimengModule {}

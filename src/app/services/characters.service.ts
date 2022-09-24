@@ -23,5 +23,7 @@ export class CharactersService {
 
   getMultipleCharacters(charactersString: string[]) {
     console.log(charactersString);
+    let charactersIDs = charactersString.map(item => Number(item.slice(42)));
+    return this._http.get<Character[]>(`/api/character/${charactersIDs}`);
   }
 }
