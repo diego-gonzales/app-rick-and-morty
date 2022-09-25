@@ -17,6 +17,7 @@
         <th class="text-center">Name</th>
         <th class="text-center">Type</th>
         <th class="text-center">Dimension</th>
+        <th class="text-center">Resindents</th>
       </tr>
       <tr>
         <th>
@@ -25,6 +26,7 @@
             field="name"
             [showMenu]="false"
             placeholder="Search by name"
+            class="w-full"
           ></p-columnFilter>
         </th>
         <th>
@@ -43,6 +45,7 @@
             placeholder="Search by dimension"
           ></p-columnFilter>
         </th>
+        <th></th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-location>
@@ -50,6 +53,17 @@
         <td>{{ location.name }}</td>
         <td>{{ location.type }}</td>
         <td>{{ location.dimension }}</td>
+        <td class="text-center">
+          <button
+            pButton
+            pRipple
+            icon="pi pi-eye"
+            class="p-button-rounded p-button-success"
+            pTooltip="Show residents"
+            tooltipPosition="top"
+            (click)="showResidents(location)"
+          ></button>
+        </td>
       </tr>
     </ng-template>
   </p-table>

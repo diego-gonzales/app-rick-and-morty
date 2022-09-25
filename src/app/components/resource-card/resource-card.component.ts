@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrimengModule } from '@modules/primeng/primeng.module';
-import { Resource } from '@interfaces/resource.interface';
+import { Resource } from '@shared/interfaces/resource.interface';
 import { RouterModule } from '@angular/router';
 
 @Component({

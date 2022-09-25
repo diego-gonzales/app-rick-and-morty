@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 import { PrimengModule } from '@modules/primeng/primeng.module';
-import { Character } from '@interfaces/characters-response.interface';
-import { GenderPipe } from '@pipes/gender.pipe';
-import { StatusPipe } from '@pipes/status.pipe';
-import { SpeciesPipe } from '@pipes/species.pipe';
+import { Character } from '@shared/interfaces/characters-response.interface';
+import { GenderPipe } from '@shared/pipes/gender.pipe';
+import { StatusPipe } from '@shared/pipes/status.pipe';
+import { SpeciesPipe } from '@shared/pipes/species.pipe';
 
 @Component({
   selector: 'app-character-modal',
@@ -22,7 +22,6 @@ export class CharacterModalComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.config);
     this.character = this.config.data.character;
   }
 

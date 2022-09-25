@@ -1,0 +1,34 @@
+<p-virtualScroller
+  [value]="virtualResidents"
+  scrollHeight="500px"
+  [itemSize]="100"
+  [lazy]="true"
+  (onLazyLoad)="loadResidentsLazy($event)"
+>
+  <ng-template let-resident pTemplate="item">
+    <div class="grid w-full">
+      <div class="col-fixed" style="width: 80px">
+        <img
+          [src]="resident.image"
+          [alt]="resident.name"
+          class="w-4rem border-circle"
+        />
+      </div>
+      <div class="col">
+        <p class="mt-0 mb-1">{{ resident.name }}</p>
+        <p-button label="Show more" styleClass="p-button-sm" (click)="showMore(resident)"></p-button>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template let-resident pTemplate="loadingItem">
+    <div class="grid w-full">
+      <div class="col-fixed" style="width: 80px">
+        <p-skeleton shape="circle" size="4rem" styleClass="mr-2"></p-skeleton>
+      </div>
+      <div class="col">
+        <p-skeleton width="10rem" styleClass="mb-2"></p-skeleton>
+        <p-skeleton width="5rem" height="2rem" styleClass="mb-2"></p-skeleton>
+      </div>
+    </div>
+  </ng-template>
+</p-virtualScroller>

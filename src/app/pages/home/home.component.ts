@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PrimengModule } from '@modules/primeng/primeng.module';
 import { RouterModule } from '@angular/router';
 import { HomeService } from '@services/home.service';
-import { Resource } from '@interfaces/resource.interface';
+import { Resource } from '@shared/interfaces/resource.interface';
 import { ResourceCardComponent } from '@components/resource-card/resource-card.component';
 
 @Component({
