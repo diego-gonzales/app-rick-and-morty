@@ -8,7 +8,7 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { TableModule } from 'primeng/table';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
-
+import { SkeletonModule } from 'primeng/skeleton';
 @NgModule({
   exports: [
     ButtonModule,
@@ -20,6 +20,7 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
     TableModule,
     MultiSelectModule,
     VirtualScrollerModule,
+    SkeletonModule,
   ],
 })
 export class PrimengModule {}

@@ -22,7 +22,6 @@ export class CharacterModalComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.config);
     this.character = this.config.data.character;
   }
 

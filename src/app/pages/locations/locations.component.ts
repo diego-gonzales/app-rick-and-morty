@@ -39,13 +39,13 @@ export class LocationsComponent implements OnInit {
     });
   }
 
-  showResidents(residents: any) {
+  showResidents(location: Location) {
     this._dialogService.open(ResidentsModalComponent, {
-      header: 'Residents',
+      header: `Resident of ${location.name}`,
       styleClass: 'w-11 md:w-8 lg:w-7 xl:w-6',
       contentStyle: { 'max-height': '500px', overflow: 'hidden' },
       dismissableMask: true,
-      data: { residents },
+      data: { residents: location.residents },
     });
   }
 }
