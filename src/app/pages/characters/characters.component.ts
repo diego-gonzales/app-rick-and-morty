@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CharactersService } from '@services/characters.service';
 import {
@@ -10,6 +10,8 @@ import { PaginatorComponent } from '@components/paginator/paginator.component';
 import { DialogService } from 'primeng/dynamicdialog';
 import { CharacterModalComponent } from '@components/character-modal/character-modal.component';
 import { PrimengModule } from '@modules/primeng/primeng.module';
+import { SharingService } from '@services/sharing.service';
+import { filter, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-characters',
@@ -24,24 +26,40 @@ import { PrimengModule } from '@modules/primeng/primeng.module';
   styleUrls: ['./characters.component.scss'],
   providers: [DialogService],
 })
-export class CharactersComponent implements OnInit {
+export class CharactersComponent implements OnInit, OnDestroy {
   characters: Character[] = [];
   info!: InfoCharacters;
+  keywordToSearch$!: Subscription;
+  keywordToSearch: string = '';
 
   constructor(
     private _charactersService: CharactersService,
-    private _dialogService: DialogService
-  ) {}
+    private _dialogService: DialogService,
+    private _sharingService: SharingService
+  ) {
+    _sharingService.showSearchInput.next(true);
+  }
 
   ngOnInit(): void {
     this.getCharacters();
+    this.searchCharacter();
+  }
+
+  searchCharacter() {
+    this.keywordToSearch$ = this._sharingService.keywordToSearch$
+      .pipe(filter(item => item !== null))
+      .subscribe(keyword => {
+        this.keywordToSearch = keyword!;
+        this.getCharacters()
+      });
   }
 
   getCharacters(page: number = 1) {
-    this._charactersService.getCharacters(page).subscribe((resp) => {
-      this.info = resp.info;
-      this.characters = resp.results;
-    });
+    this._charactersService.getCharacters(page, this.keywordToSearch)
+      .subscribe((resp) => {
+        this.info = resp.info;
+        this.characters = resp.results;
+      });
   }
 
   getCharacter(characterID: number) {
@@ -62,5 +80,11 @@ export class CharactersComponent implements OnInit {
 
   goToPage(page: number) {
     this.getCharacters(page);
+  }
+
+  ngOnDestroy(): void {
+    this.keywordToSearch$.unsubscribe();
+    this._sharingService.keywordToSearch.next(null);
+    this._sharingService.showSearchInput.next(false);
   }
 }

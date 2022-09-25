@@ -31,10 +31,11 @@ export class EpisodesComponent implements OnInit {
     let episode = event.filters?.['episode']?.value ?? '';
     let name = event.filters?.['name']?.value ?? '';
 
-    this._episodesService.getEpisodes(page, episode, name).subscribe((resp) => {
-      this.episodes = resp.results;
-      this.totalRecords = resp.info.count;
-    });
+    this._episodesService.getEpisodes(page, episode, name)
+      .subscribe((resp) => {
+        this.episodes = resp.results;
+        this.totalRecords = resp.info.count;
+      });
   }
 
   showCharacters(episode: Episode) {

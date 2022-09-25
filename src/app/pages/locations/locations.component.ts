@@ -32,10 +32,11 @@ export class LocationsComponent implements OnInit {
     let type = event.filters?.['type']?.value ?? '';
     let dimension = event.filters?.['dimension']?.value ?? '';
 
-    this._locationService.getLocations(page, name, type, dimension).subscribe((resp) => {
-      this.locations = resp.results;
-      this.totalRecords = resp.info.count;
-    });
+    this._locationService.getLocations(page, name, type, dimension)
+      .subscribe((resp) => {
+        this.locations = resp.results;
+        this.totalRecords = resp.info.count;
+      });
   }
 
   showResidents(location: Location) {

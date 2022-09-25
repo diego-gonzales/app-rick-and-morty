@@ -3,6 +3,16 @@
     <img src="assets/img/Rick_and_Morty.svg" height="25" class="mr-2" />
   </ng-template>
   <ng-template pTemplate="end">
-    <input type="text" pInputText placeholder="Search" />
+    <span class="p-input-icon-left" *ngIf="showSearchInput$ | async">
+      <i class="pi pi-search"></i>
+      <input
+        type="search"
+        pInputText
+        placeholder="Search character"
+        [formControl]="searchControl"
+        class="w-full"
+        (keyup.enter)="searchCharacter()"
+      />
+    </span>
   </ng-template>
 </p-menubar>

@@ -12,8 +12,14 @@ export class CharactersService {
     private _http: HttpClient
   ) {}
 
-  getCharacters(page: number = 1): Observable<CharactersResponse> {
-    const params = new HttpParams().set('page', page);
+  getCharacters(
+    page: number = 1,
+    name: string = ''
+  ): Observable<CharactersResponse> {
+    const params = new HttpParams()
+      .set('page', page)
+      .set('name', name)
+
     return this._http.get<CharactersResponse>('/api/character', { params });
   }
 
