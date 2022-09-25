@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CharactersService } from '@services/characters.service';
 import {
   Character,
-  Info,
+  InfoCharacters,
 } from '@shared/interfaces/characters-response.interface';
 import { CharacterCardComponent } from '@components/character-card/character-card.component';
 import { PaginatorComponent } from '@components/paginator/paginator.component';
@@ -26,7 +26,7 @@ import { PrimengModule } from '@modules/primeng/primeng.module';
 })
 export class CharactersComponent implements OnInit {
   characters: Character[] = [];
-  info!: Info;
+  info!: InfoCharacters;
 
   constructor(
     private _charactersService: CharactersService,

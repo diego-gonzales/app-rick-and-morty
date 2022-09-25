@@ -1,1 +1,63 @@
-<p>episodes works!</p>
+<div class="m-3">
+  <p-table
+    [value]="episodes"
+    [lazy]="true"
+    (onLazyLoad)="loadEpisodes($event)"
+    responsiveLayout="scroll"
+    dataKey="id"
+    [paginator]="true"
+    [rows]="20"
+    [totalRecords]="totalRecords"
+    [globalFilterFields]="['episode', 'name']"
+    [showCurrentPageReport]="true"
+    tableStyleClass="text-center"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th class="text-center">Episode</th>
+        <th class="text-center">Name</th>
+        <th class="text-center">Air date</th>
+        <th class="text-center">Characters</th>
+      </tr>
+      <tr>
+        <th>
+          <p-columnFilter
+            type="text"
+            field="episode"
+            [showMenu]="false"
+            placeholder="Search by episode"
+            class="w-full"
+          ></p-columnFilter>
+        </th>
+        <th>
+          <p-columnFilter
+            type="text"
+            field="name"
+            [showMenu]="false"
+            placeholder="Search by name"
+          ></p-columnFilter>
+        </th>
+        <th></th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-episode>
+      <tr>
+        <td>{{ episode.episode }}</td>
+        <td>{{ episode.name }}</td>
+        <td>{{ episode.air_date }}</td>
+        <td class="text-center">
+          <button
+            pButton
+            pRipple
+            icon="pi pi-eye"
+            class="p-button-rounded p-button-success"
+            pTooltip="Show characters"
+            tooltipPosition="top"
+            (click)="showCharacters(episode)"
+          ></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

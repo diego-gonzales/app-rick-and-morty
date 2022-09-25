@@ -18,7 +18,6 @@ import { ResidentsModalComponent } from '@components/residents-modal/residents-m
 export class LocationsComponent implements OnInit {
   locations!: Location[];
   totalRecords!: number;
-  cols!: any[];
 
   constructor(
     private _locationService: LocationsService,
