@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { routes } from './app/routes';
 import { RickAndMortyInterceptor } from '@interceptors/rick-and-morty.interceptor';
+import { MessageService } from 'primeng/api';
 
 if (environment.production) {
   enableProdMode();
@@ -23,5 +24,6 @@ bootstrapApplication(AppComponent, {
       useClass: RickAndMortyInterceptor,
       multi: true,
     },
+    MessageService
   ],
 }).catch((error) => console.log(error));
